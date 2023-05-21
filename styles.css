@@ -1,0 +1,204 @@
+/* styles.css */
+
+/* Generelle stilarter */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1, h2 {
+    color: #333;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f2f2f2;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .login button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Navigation */
+  nav {
+    text-align: center;
+    background-color: #f2f2f2;
+    padding: 10px 0;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin: 0 10px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  /* Core Competencies */
+  #core-competencies {
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  
+  /* Product Carousel */
+  #product-carousel {
+    padding: 20px;
+    overflow: hidden;
+  }
+  
+  .carousel-container {
+    width: 100%;
+    max-width: 800px; /* Juster denne værdi efter behov */
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+.carousel-track {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+  margin: 0;
+  padding: 0;
+}
+
+  
+  .carousel-item {
+    flex: 0 0 100%;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .carousel-item img {
+    width: 370px;
+    height: 370px;
+    object-fit: cover;
+  }
+  
+  
+  .carousel-controls {
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .carousel-controls button {
+    margin: 0 5px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .view-all-btn {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .view-all-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .view-all-button:hover {
+    background-color: #555;
+  }
+  
+  
+  /* Produktanbefalinger */
+  #product-recommendations {
+    padding: 20px;
+  }
+  
+  .product {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+  }
+  
+  .product img {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .product p {
+    margin-top: 10px;
+  }
+  
+  #product-recommendations a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+  }
+ 
+  /* Tilføj følgende regel til .product-list */
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  /* Tilføj følgende regel til .product */
+  .product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    text-align: center;
+  }
+  
+  
+  /* Tilføj følgende regel til .product img */
+  .product img {
+    width: 370px;
+    height: 370px;
+    object-fit: cover;
+  }
+  
+  /* Tilføj følgende regel til .product p */
+  .product p {
+    margin-top: 10px;
+  }
+
+
