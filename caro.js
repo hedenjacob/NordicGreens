@@ -6,6 +6,7 @@ const itemWidth = items[0].offsetWidth;
 let position = 0;
 let timer;
 
+// addEventListener der tjekker for clicks til forrige billede
 prevBtn.addEventListener('click', () => {
   position += itemWidth;
   if (position > 0) {
@@ -13,7 +14,7 @@ prevBtn.addEventListener('click', () => {
   }
   setPosition();
 });
-
+// addEventListener der tjekker for clicks til næste billede
 nextBtn.addEventListener('click', () => {
   position -= itemWidth;
   if (position < -((items.length - 1) * itemWidth)) {

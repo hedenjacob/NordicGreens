@@ -19,7 +19,7 @@
 
     <nav>
       <ul>
-        <li><a href="#">Produkter</a></li>
+        <li><a href="products.php">Produkter</a></li>
         <li><a href="#">Kontakt</a></li>
         <li><a href="#">Om os</a></li>
       </ul>
