@@ -21,7 +21,7 @@
     $servername = "localhost";
     $username = "root";
     $password = "root";
-    $dbname = "hest";
+    $dbname = "shoppingcart";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn->connect_error) {
@@ -29,27 +29,26 @@
     }
 
     // Hent kategorier fra databasen
-    $sql_categories = "SELECT * FROM categories";
+    $sql_categories = "SELECT DISTINCT kategori FROM products";
     $result_categories = $conn->query($sql_categories);
 
     $categories = array(); // Opret et array til at gemme kategorierne
 
     if ($result_categories->num_rows > 0) {
         while ($row = $result_categories->fetch_assoc()) {
-            $categories[$row['id']] = $row['name']; // Gem kategoriens navn med dens id som nøgle
+            $categories[] = $row['kategori']; // Tilføj hver kategori til arrayet
         }
     }
 
-    $categoryFilter = "";
+    // Hent produkter fra databasen
+    $sql = "SELECT * FROM products";
+
+    // Check om en kategori er valgt
     if (isset($_GET['category'])) {
-        $categoryId = $_GET['category'];
-        if (array_key_exists($categoryId, $categories)) {
-            $categoryFilter = "WHERE category_id = $categoryId";
-        }
+        $category = $_GET['category'];
+        $sql .= " WHERE kategori = '$category'";
     }
 
-    // Hent produkter fra databasen baseret på kategori-filter
-    $sql = "SELECT * FROM products $categoryFilter";
     $result = $conn->query($sql);
     ?>
     <div class="sidebar">
@@ -57,21 +56,14 @@
         <ul>
             <li><a href="products.php">Alle produkter</a></li>
             <?php
-            foreach ($categories as $id => $name) {
-                echo '<li><a href="?category=' . $id . '">' . $name . '</a></li>';
+            foreach ($categories as $category) {
+                echo '<li><a href="?category=' . $category . '">' . $category . '</a></li>';
             }
             ?>
         </ul>
     </div>
     <div class="content">
-        <?php
-        if (!empty($categoryFilter)) {
-            $selectedCategory = $categories[$categoryId];
-            echo '<h1>Produkt kategori: ' . $selectedCategory . '</h1>';
-        } else {
-            echo '<h1>Alle produkter</h1>';
-        }
-        ?>
+        <h1>Produkt kategori</h1>
         <div class="products">
             <?php
             if ($result->num_rows > 0) {
@@ -86,12 +78,15 @@
                     echo '</div>';
                 }
             } else {
-                echo 'Ingen produkter fundet.';
+                echo "Ingen produkter fundet.";
             }
+
+            $conn->close();
             ?>
         </div>
     </div>
 </div>
+
 <?php include 'footer.php'; ?>
 </body>
 </html>

@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Nordic Greens</title>
+    <title>Nordic Greens</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
-  <link rel="stylesheet" type="text/css" href="footer.css">
 </head>
 <body>
   <div class="container">
@@ -102,10 +101,8 @@
   <button class="view-all-button">Se alle produkter</button>
 </div>
 </section>
-<?php include 'footer.php'; ?>
-<footer>
-</footer>
 </div>
 <script src="caro.js"></script>
+<?php include 'footer.php'; ?>
 </body>
 </html>
